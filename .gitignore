@@ -1,0 +1,10 @@
+venv/
+_pycache_/
+*.pyc
+*.pcap
+*.pcapng
+*.log
+.env
+*.env
+*.pem
+*.key
