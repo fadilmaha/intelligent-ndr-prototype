@@ -52,7 +52,7 @@ The dashboard provides:
 - Connection details
 - Risk score for each analyzed connection
 
-![NDR Grafana Dashboard](grafana-dashboard.png)
+![NDR Grafana Dashboard](grafana_dashboard.png)
 
 ## Project Structure
 
