@@ -20,30 +20,12 @@ The prototype combines several complementary technologies:
 - iptables for controlled automated response
 
 ## Architecture
+The prototype follows a modular NDR architecture combining network traffic
+analysis, Machine Learning, contextual analysis, risk scoring, visualization
+and controlled automated response.
 
-The processing pipeline follows this logic:
+![NDR Architecture](architecture-ndr.png)
 
-PCAP
-→ TShark
-→ Feature Engineering
-→ Isolation Forest
-→ ML-Zeek Correlation
-→ Risk Scoring
-→ PostgreSQL
-→ Grafana
-
-In parallel:
-
-PCAP
-→ Zeek
-→ Contextual information
-
-PCAP
-→ Suricata
-→ Signature-based alerts
-→ Risk Scoring
-
-The final risk scores are also processed by a controlled response engine.
 
 ## Main Features
 
@@ -58,6 +40,19 @@ The final risk scores are also processed by a controlled response engine.
 - Grafana dashboard and alerting
 - Controlled response engine with DRY_RUN and ENFORCE modes
 - Automated Bash pipeline
+
+## Dashboard
+
+The detected network events and their associated risk levels are stored in
+PostgreSQL and visualized through a Grafana dashboard.
+
+The dashboard provides:
+- Total number of NDR events
+- Distribution by risk level
+- Connection details
+- Risk score for each analyzed connection
+
+![NDR Grafana Dashboard](grafana-dashboard.png)
 
 ## Project Structure
 
